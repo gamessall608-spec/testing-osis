@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Social Vault — Dashboard Media Sosial OSIS</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#03060a;--panel:#071018;--muted:#9fb0bb;--glass:rgba(255,255,255,0.03);
+      --neon1:#7c5cff;--neon2:#00d4ff;--neon3:#39ff14;--radius:14px;--shadow:0 20px 60px rgba(0,0,0,0.75);
+    }
+    *{box-sizing:border-box}html,body{height:100%}
+    body{margin:0;padding:34px;font-family:Inter,system-ui,Roboto;color:#eaf6ff;background:radial-gradient(800px 300px at 10% 10%,rgba(124,92,255,0.06),transparent),radial-gradient(700px 300px at 90% 90%,rgba(0,212,255,0.03),transparent),var(--bg)}
+    .wrap{max-width:1200px;margin:0 auto;display:grid;gap:22px}
+    header{display:flex;align-items:center;justify-content:space-between;gap:12px}
+    .brand{display:flex;align-items:center;gap:12px}
+    .logo{width:56px;height:56px;border-radius:12px;background:linear-gradient(135deg,var(--neon1),var(--neon2));display:grid;place-items:center;font-weight:800;color:#041018;box-shadow:0 14px 40px rgba(124,92,255,0.12)}
+    h1{font-size:20px;margin:0}.lead{margin:0;color:var(--muted);font-size:13px}
+    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px;margin-top:8px}
+    .card{background:linear-gradient(180deg,rgba(255,255,255,0.02),transparent);border-radius:var(--radius);padding:16px;border:1px solid var(--glass);box-shadow:var(--shadow);transition:transform .45s,box-shadow .45s;position:relative;overflow:hidden;backdrop-filter:blur(12px)}
+    .card:hover{transform:translateY(-10px) rotateX(6deg) rotateY(-6deg);box-shadow:0 30px 80px rgba(2,8,23,0.85)}
+    .meta{display:flex;align-items:center;gap:12px}
+    .avatar{width:62px;height:62px;border-radius:12px;overflow:hidden;border:2px solid rgba(255,255,255,0.03)}
+    .avatar img{width:100%;height:100%;object-fit:cover}
+    .acct h3{margin:0;font-size:16px}
+    .acct h3 a{color:#fff;text-decoration:underline;cursor:pointer;transition:.3s}
+    .acct h3 a:hover{color:var(--neon2);text-shadow:0 0 8px var(--neon2)}
+    .acct p{margin:0;color:var(--muted);font-size:13px}
+    .kpi{display:flex;gap:10px;margin-top:12px}
+    .item{flex:1;padding:10px;border-radius:10px;background:rgba(255,255,255,0.02);text-align:center}
+    .num{font-weight:800;font-size:18px}
+    .lbl{color:var(--muted);font-size:12px}
+    .actions{display:flex;gap:8px;margin-top:12px}
+    .btn{padding:8px 12px;border-radius:10px;border:1px solid rgba(255,255,255,0.03);background:transparent;color:var(--muted);cursor:pointer;font-weight:700}
+    .btn.primary{background:linear-gradient(90deg,var(--neon1),var(--neon2));color:#041018;border:none;box-shadow:0 8px 30px rgba(124,92,255,0.09)}
+    .ribbon{position:absolute;right:12px;top:12px;padding:6px 10px;border-radius:999px;font-weight:800;font-size:12px;color:#041018}
+    .insta .ribbon{background:linear-gradient(90deg,#ff7a18,#ad0af0)}
+    .yt .ribbon{background:linear-gradient(90deg,#ff4b4b,#ff8a00)}
+    .tiktok .ribbon{background:linear-gradient(90deg,#00f2ea,#ff3ea0)}
+    .x .ribbon{background:linear-gradient(90deg,#1da1f2,#0f5cc9)}
+    footer{text-align:center;color:var(--muted);font-size:13px;margin-top:18px}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div class="brand">
+        <div class="logo">SV</div>
+        <div>
+          <h1>Social Vault</h1>
+          <p class="lead">Dashboard Realtime Simulasi Akun Media Sosial OSIS</p>
+        </div>
+      </div>
+    </header>
+
+    <section class="grid">
+      <!-- INSTAGRAM OSIS -->
+      <article class="card insta">
+        <div class="ribbon">Instagram</div>
+        <div class="meta">
+          <div class="avatar">
+            <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=400&q=60">
+          </div>
+          <div class="acct">
+            <h3>
+              <a href="https://www.instagram.com/osisskawan_?igsh=dXcyazBwZ3RnejBz" target="_blank">
+                @osisskawan_
+              </a>
+            </h3>
+            <p>Organisasi Siswa Intra Sekolah • SMKN 1 Wanayasa</p>
+          </div>
+        </div>
+        <div class="kpi">
+          <div class="item"><div class="num" id="igFollowers">5000</div><div class="lbl">Followers</div></div>
+          <div class="item"><div class="num" id="igPosts">200</div><div class="lbl">Posting</div></div>
+          <div class="item"><div class="num" id="igEng">6.2%</div><div class="lbl">Engagement</div></div>
+        </div>
+        <div class="actions">
+          <button class="btn primary" onclick="openLink('https://www.instagram.com/osisskawan_?igsh=dXcyazBwZ3RnejBz')">Buka</button>
+        </div>
+      </article>
+
+      <!-- Contoh lain (YouTube, TikTok, X) -->
+      <article class="card yt">
+        <div class="ribbon">YouTube</div>
+        <div class="meta">
+          <div class="avatar"><img src="https://images.unsplash.com/photo-1505678261036-a3fcc5e884ee?auto=format&fit=crop&w=400&q=60"></div>
+          <div class="acct">
+            <h3><a href="https://www.youtube.com/@avocaa" target="_blank">Avocaa Channel</a></h3>
+            <p>Vlog • Tutorial • Live</p>
+          </div>
+        </div>
+        <div class="kpi">
+          <div class="item"><div class="num" id="ytSub">8100</div><div class="lbl">Subscribers</div></div>
+          <div class="item"><div class="num" id="ytView">120000</div><div class="lbl">Views / bln</div></div>
+          <div class="item"><div class="num" id="ytWatch">560</div><div class="lbl">Jam Tayang</div></div>
+        </div>
+        <div class="actions"><button class="btn primary" onclick="openLink('https://www.youtube.com/@avocaa')">Buka</button></div>
+      </article>
+    </section>
+
+    <footer>© 2025 Social Vault • OSIS SMK Negeri 1 Wanayasa</footer>
+  </div>
+
+  <script>
+    function openLink(url){ window.open(url, '_blank'); }
+
+    // simulasi update otomatis followers
+    setInterval(()=>{
+      const update = (id, delta=10)=>{
+        const el = document.getElementById(id);
+        let val = parseFloat(el.innerText.replace(/[^0-9.]/g,''));
+        if(isNaN(val)) return;
+        val += Math.floor(Math.random()*delta);
+        el.innerText = val.toLocaleString();
+      };
+      update('igFollowers',5);
+    },4000);
+  </script>
+</body>
+</html>
